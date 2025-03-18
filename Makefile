@@ -56,7 +56,7 @@ include $(MOOSE_DIR)/modules/modules.mk
 
 # dep apps
 APPLICATION_DIR    := $(CURDIR)
-APPLICATION_NAME   := diddo
+APPLICATION_NAME   := ditto
 BUILD_EXEC         := yes
 GEN_REVISION       := no
 include            $(FRAMEWORK_DIR)/app.mk

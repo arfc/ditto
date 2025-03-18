@@ -11,13 +11,13 @@
 
 #include "MooseApp.h"
 
-class DiddoApp : public MooseApp
+class DittoApp : public MooseApp
 {
 public:
   static InputParameters validParams();
 
-  DiddoApp(InputParameters parameters);
-  virtual ~DiddoApp();
+  DittoApp(InputParameters parameters);
+  virtual ~DittoApp();
 
   static void registerApps();
   static void registerAll(Factory & f, ActionFactory & af, Syntax & s);
