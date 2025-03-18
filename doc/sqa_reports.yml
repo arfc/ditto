@@ -1,6 +1,6 @@
 Applications:
-    diddo:
+    ditto:
         app_types:
-            - DiddoApp
+            - DittoApp
         content_directory: ${ROOT_DIR}/doc/content
         log_default: WARNING

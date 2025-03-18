@@ -51,20 +51,20 @@ ADDITIONAL_LIBS     := $(FRAMEWORK_DIR)/contrib/gtest/libgtest.la
 # dep apps
 CURRENT_DIR        := $(shell pwd)
 APPLICATION_DIR    := $(CURRENT_DIR)/..
-APPLICATION_NAME   := diddo
+APPLICATION_NAME   := ditto
 include            $(FRAMEWORK_DIR)/app.mk
 
 APPLICATION_DIR    := $(CURRENT_DIR)
-APPLICATION_NAME   := diddo-unit
+APPLICATION_NAME   := ditto-unit
 BUILD_EXEC         := yes
 
 DEP_APPS    ?= $(shell $(FRAMEWORK_DIR)/scripts/find_dep_apps.py $(APPLICATION_NAME))
 include $(FRAMEWORK_DIR)/app.mk
 
 # Find all the Diddo unit test source files and include their dependencies.
-diddo_unit_srcfiles := $(shell find $(CURRENT_DIR)/src -name "*.C")
-diddo_unit_deps := $(patsubst %.C, %.$(obj-suffix).d, $(diddo_unit_srcfiles))
--include $(diddo_unit_deps)
+ditto_unit_srcfiles := $(shell find $(CURRENT_DIR)/src -name "*.C")
+ditto_unit_deps := $(patsubst %.C, %.$(obj-suffix).d, $(ditto_unit_srcfiles))
+-include $(ditto_unit_deps)
 
 ###############################################################################
 # Additional special case targets should be added here
