@@ -1,5 +1,5 @@
 Content:
-    Diddo:
+    Ditto:
         root_dir: ${ROOT_DIR}/doc/content
     moose:
         root_dir: ${MOOSE_DIR}/framework/doc/content
@@ -12,7 +12,7 @@ Renderer:
     type: MooseDocs.base.MaterializeRenderer
 Extensions:
     MooseDocs.extensions.navigation:
-        name: Diddo
+        name: Ditto
     MooseDocs.extensions.appsyntax:
         executable: ${ROOT_DIR}
         remove: !include ${MOOSE_DIR}/framework/doc/remove.yml

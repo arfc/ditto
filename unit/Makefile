@@ -61,7 +61,7 @@ BUILD_EXEC         := yes
 DEP_APPS    ?= $(shell $(FRAMEWORK_DIR)/scripts/find_dep_apps.py $(APPLICATION_NAME))
 include $(FRAMEWORK_DIR)/app.mk
 
-# Find all the Diddo unit test source files and include their dependencies.
+# Find all the Ditto unit test source files and include their dependencies.
 ditto_unit_srcfiles := $(shell find $(CURRENT_DIR)/src -name "*.C")
 ditto_unit_deps := $(patsubst %.C, %.$(obj-suffix).d, $(ditto_unit_srcfiles))
 -include $(ditto_unit_deps)

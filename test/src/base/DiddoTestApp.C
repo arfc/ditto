@@ -6,45 +6,45 @@
 //*
 //* Licensed under LGPL 2.1, please see LICENSE for details
 //* https://www.gnu.org/licenses/lgpl-2.1.html
-#include "DiddoTestApp.h"
-#include "DiddoApp.h"
+#include "DittoTestApp.h"
+#include "DittoApp.h"
 #include "Moose.h"
 #include "AppFactory.h"
 #include "MooseSyntax.h"
 
 InputParameters
-DiddoTestApp::validParams()
+DittoTestApp::validParams()
 {
-  InputParameters params = DiddoApp::validParams();
+  InputParameters params = DittoApp::validParams();
   params.set<bool>("use_legacy_material_output") = false;
   params.set<bool>("use_legacy_initial_residual_evaluation_behavior") = false;
   return params;
 }
 
-DiddoTestApp::DiddoTestApp(InputParameters parameters) : MooseApp(parameters)
+DittoTestApp::DittoTestApp(InputParameters parameters) : MooseApp(parameters)
 {
-  DiddoTestApp::registerAll(
+  DittoTestApp::registerAll(
       _factory, _action_factory, _syntax, getParam<bool>("allow_test_objects"));
 }
 
-DiddoTestApp::~DiddoTestApp() {}
+DittoTestApp::~DittoTestApp() {}
 
 void
-DiddoTestApp::registerAll(Factory & f, ActionFactory & af, Syntax & s, bool use_test_objs)
+DittoTestApp::registerAll(Factory & f, ActionFactory & af, Syntax & s, bool use_test_objs)
 {
-  DiddoApp::registerAll(f, af, s);
+  DittoApp::registerAll(f, af, s);
   if (use_test_objs)
   {
-    Registry::registerObjectsTo(f, {"DiddoTestApp"});
-    Registry::registerActionsTo(af, {"DiddoTestApp"});
+    Registry::registerObjectsTo(f, {"DittoTestApp"});
+    Registry::registerActionsTo(af, {"DittoTestApp"});
   }
 }
 
 void
-DiddoTestApp::registerApps()
+DittoTestApp::registerApps()
 {
-  registerApp(DiddoApp);
-  registerApp(DiddoTestApp);
+  registerApp(DittoApp);
+  registerApp(DittoTestApp);
 }
 
 /***************************************************************************************************
@@ -52,12 +52,12 @@ DiddoTestApp::registerApps()
  **************************************************************************************************/
 // External entry point for dynamic application loading
 extern "C" void
-DiddoTestApp__registerAll(Factory & f, ActionFactory & af, Syntax & s)
+DittoTestApp__registerAll(Factory & f, ActionFactory & af, Syntax & s)
 {
-  DiddoTestApp::registerAll(f, af, s);
+  DittoTestApp::registerAll(f, af, s);
 }
 extern "C" void
-DiddoTestApp__registerApps()
+DittoTestApp__registerApps()
 {
-  DiddoTestApp::registerApps();
+  DittoTestApp::registerApps();
 }

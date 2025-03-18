@@ -7,7 +7,7 @@
 //* Licensed under LGPL 2.1, please see LICENSE for details
 //* https://www.gnu.org/licenses/lgpl-2.1.html
 
-#include "DiddoApp.h"
+#include "DittoApp.h"
 #include "gtest/gtest.h"
 
 // Moose includes
@@ -25,7 +25,7 @@ main(int argc, char ** argv)
   testing::InitGoogleTest(&argc, argv);
 
   MooseInit init(argc, argv);
-  registerApp(DiddoApp);
+  registerApp(DittoApp);
   Moose::_throw_on_error = true;
   Moose::_throw_on_warning = true;
 
